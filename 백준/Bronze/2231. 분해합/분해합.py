@@ -7,20 +7,19 @@
 # N (1 ~ 1m)
 
 from sys import stdin, stdout
-from itertools import permutations
 input = lambda: stdin.readline().rstrip()
 print = lambda x: stdout.write(str(x))
 
-def solution(N: str):
-  M: int = int(N)
-  for i in range(M):
-    sumP = sum([int(j) for j in str(i)])
-    if ( i + sumP == M):
+def solution(N: int):
+  minM: int = N - (len(str(N)) * 9)
+  for i in range(minM, N):
+    sumM: int = sum([int(j) for j in str(abs(i))])
+    if ( i + sumM == N):
       print(i)
       break
   else:
     print(0)
 
 if __name__ == "__main__":
-  N = input()
+  N: int = int(input())
   solution(N)
