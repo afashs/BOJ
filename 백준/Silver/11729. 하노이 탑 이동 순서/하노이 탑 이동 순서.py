@@ -1,5 +1,6 @@
-import sys
-_in = lambda: sys.stdin.readline()
+from sys import stdin, stdout
+_in = lambda: stdin.readline()
+_out = lambda o: stdout.write(str(o))
 
 def solution(N: int):
     path: list = []
@@ -13,9 +14,9 @@ def solution(N: int):
             hanoi(n - 1, mid, src, dst)
 
     hanoi(N, 1, 2, 3)
-    print(len(path))
-    print('\n'.join(path))
+    _out(f"{len(path)}\n")
+    _out('\n'.join(path))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     N: int = int(_in())
     solution(N)
