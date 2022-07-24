@@ -5,13 +5,12 @@ def bSearch(el, nli, st, end):
   while st <= end:
     mid = (st + end) // 2
     if nli[mid] == el:
-      return True
+      return res.append(1)
     elif nli[mid] > el:
       end = mid - 1
     else:
       st = mid + 1
-  return False
-
+  return res.append(0)
 
 n = int(input())
 nli = [*map(int, input().split())]
@@ -24,9 +23,6 @@ snli = sorted(nli)
 for el in mli:
   st = 0
   end = len(nli) - 1
-  if (bSearch(el, snli, st, end) == True):
-    res.append(1)
-  else:
-    res.append(0)
+  bSearch(el, snli, st, end)
 
 print(*res)
