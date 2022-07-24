@@ -1,19 +1,3 @@
-## Problem
-# 정수 m개
-# 카드 n개
-# 가지고 있는지 여부 리스트를 알고싶다
-
-## In
-# n (1 ~ 500K)
-# nli (-10m ~ 10m)
-# m (1 ~ 500K)
-# mli (-10m ~ 10m)
-
-## Out
-# list<true 1 or false 0>
-
-## Solve
-
 import sys
 input  = lambda: sys.stdin.readline()
 
